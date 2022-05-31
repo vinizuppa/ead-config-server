@@ -9,7 +9,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableConfigServer//Define que esse projeto, será para configurações.
 @EnableEurekaClient
 public class ConfigServerApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(ConfigServerApplication.class, args);
     }
