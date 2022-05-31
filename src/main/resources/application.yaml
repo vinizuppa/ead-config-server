@@ -1,0 +1,29 @@
+server:
+  port: 8888 #Porta em que a aplicação ira rodar.
+
+spring:
+  application:
+    name: ead-config-server #Nome da aplicação.
+  cloud:
+    config:
+      server:
+        git: #Configuração para acessar repositório do git hub, referente ao arquivo application.yaml global para aplicação.
+          uri: https://github.com/vinizuppa/ead-config-server-repo #URI do repositório
+          default-label: main #Branch
+         # username: vinizuppa #Caso o repositório do application.yaml fosse privado
+         # password:Criar personal access token #Caso o repositório do application.yaml fosse privado
+
+ead:
+  configServer:
+    username: configserver
+    password: 'ead123cs'
+  serviceRegistry: #usuário e senha padrão de autenticação do service registry.
+    username: serviceregistry
+    password: 'ead123sr'
+
+eureka:
+  client:
+    service-url:
+      defaultZone: 'http://${ead.serviceRegistry.username}:${ead.serviceRegistry.password}@localhost:8761/eureka'
+    instance:
+      hostname: localhost
