@@ -2,4 +2,4 @@ spring:
   profiles:
     active: prod
   application:
-    name: ead-config-server #Nome da aplicação.
+    name: ead-config-server #Nome da aplicaÃ§Ã£o.

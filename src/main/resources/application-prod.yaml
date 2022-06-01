@@ -1,18 +1,18 @@
 server:
-  port: ${PORT} #Porta em que a aplicação ira rodar.
+  port: ${PORT}
 
 spring:
   cloud:
     config:
       server:
-        git: #Configuração para acessar repositório do git hub, referente ao arquivo application-dev.yaml global para aplicação.
-          uri: https://github.com/vinizuppa/ead-config-server-repo #URI do repositório
-          default-label: main #Branch
-            username: ${GIT_USERNAME} #Caso o repositório do application-dev.yaml fosse privado
-            password: ${GIT_PASSWORD} #Criar personal access token #Caso o repositório do application-dev.yaml fosse privado
-encrypt:
-  key: v8y/A?D(G+KbPeShVmYq3t6w9z$C&E)H@McQfTjWnZr4u7x!A%D*G-JaNdRgUkXp
+        git:
+          uri: https://github.com/vinizuppa/ead-config-server-repo
+          default-label: main
+          username: ${GIT_USERNAME}
+          password: ${GIT_PASSWORD}
 
+encrypt:
+  key: E)H@MbQeThWmZq4t7w!z%C*F-JaNdRfUjXn2r5u8x/A?D(G+KbPeShVkYp3s6v9y
 
 ead:
   configServer:
@@ -21,8 +21,8 @@ ead:
 
 eureka:
   client:
-    service-url:
+    serviceUrl:
       defaultZone: ${EUREKA_URL}
-    instance:
-      hostname: ${APP_DOMAIN_NAME}
-      non-secure-port: 80
+  instance:
+    hostname: ${APP_DOMAIN_NAME}
+    non-secure-port: 80
