@@ -2,4 +2,12 @@ spring:
   profiles:
     active: dev
   application:
-    name: ead-config-server #Nome da aplicação.
+    name: ead-config-server #Nome da aplicaÃ§Ã£o.
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/vinizuppa/ead-config-server-repo
+          default-label: main
+          username: vinizuppa
+          password: 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
